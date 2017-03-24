@@ -3,13 +3,12 @@ import User from './User.jsx';
 
 class UserList extends Component {
     render() {
-        const {users, activeUser} = this.props;
+        const {users} = this.props;
         return (
             <ul>
                 {users.map(user => {
                     return <User
                         user={user}
-                        activeUser={activeUser}
                         key={user.id}
                     />
                 })}
@@ -19,8 +18,7 @@ class UserList extends Component {
 }
 
 UserList.propTypes = {
-    users: React.PropTypes.array.isRequired,
-    activeUser: React.PropTypes.object.isRequired
+    users: React.PropTypes.array.isRequired
 }
 
 export default UserList
